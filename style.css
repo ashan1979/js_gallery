@@ -196,3 +196,19 @@ Modal
     min-height: 100vh;
     overflow: scroll;
 }
+
+.modal.open {
+    opacity: 1;
+    z-index: 999;
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 3rem;
+    color: var(--clr-white);
+    background: transparent;
+    border-color: transparent;
+    cursor: pointer;
+}
