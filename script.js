@@ -59,5 +59,25 @@ class Gallery {
 
     closeModal() {
         this.modal.classList.remove('open');
+        this.closeBtn.removeEventListener('click', this.closeModal);
+        this.nextBtn.removeEventListener('click', this.nextImage);
+        this.prevBtn.removeEventListener('click', this.prevImage);
+        this.modalImages.removeEventListener('click', this.chooseImage);
+    }
+    nextImage() {
+        const selected =  this.modalImages.querySelector('.selected');
+        const next =
+        selected.nextElementSibling || this.modalImages.firstElementChild;
+        selected.classList.remove('.selected');
+        next.classList.add('selected');
+        this.setMainImage(next);
+    }
+
+    prevImage() {
+        const selected =  this.modalImages.querySelector('.selected');
+        const prev = selected.previousElementSibling || this.modalImages.lastElementChild;
+        selected.classList.remove('selected');
+        prev.classList.add('selected');
+        this.setMainImage(prev);
     }
 }
