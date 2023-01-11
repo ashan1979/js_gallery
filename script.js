@@ -80,4 +80,15 @@ class Gallery {
         prev.classList.add('selected');
         this.setMainImage(prev);
     }
+
+    chooseImage(e) {
+        if (e.target.classList.contains('modal-img')) {
+            const selected =
+            this.modalImages.querySelector('.selected');
+            selected.classList.remove('selected');
+        }
+    }
 }
+
+const nature = new Gallery(getElement('.nature'));
+const city = new Gallery(getElement('.city'));
