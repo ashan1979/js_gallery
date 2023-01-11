@@ -44,5 +44,20 @@ class Gallery {
         .map(function (image) {
             return `<img src="${image.src}" title="${image.title}" data-id="${image.dataset.id}" class="${slectedImage.dataset.id === image.datset.id ? 'modal-img selected' : 'modal-img'}">`;
         })
+        .join('');
+        this.modal.classList.add('open');
+        this.closeBtn.addEventListener('click', this.closeModal);
+        this.nextBtn.addEventListener('click', this.nextImage);
+        this.prevBtn.addEventListener('click', this.prevImage);
+        this.modalImages.addEventListener('click', this.chooseImage);
+    }
+
+    setMainImage(selectedImage) {
+        this.modalImg.src = selectedImage.src;
+        this.imageName.textContent = selectedImage.title;
+    }
+
+    closeModal() {
+        this.modal.classList.remove('open');
     }
 }
