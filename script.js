@@ -38,7 +38,7 @@ class Gallery {
         }.bind(this)
         );
     }
-    openModal(selectImage, list) {
+    openModal(selectedImage, list) {
         this.setMainImage(selectImage);
         this.modalImage.innerHTML = list
         .map(function (image) {
