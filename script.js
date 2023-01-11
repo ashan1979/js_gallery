@@ -39,10 +39,12 @@ class Gallery {
         );
     }
     openModal(selectedImage, list) {
-        this.setMainImage(selectImage);
+        this.setMainImage(selectedImage);
         this.modalImage.innerHTML = list
         .map(function (image) {
-            return `<img src="${img.src}" title="${image.title}" data-id="${image.dataset.id}" class="${selectedImage.dataset.id === image.datset.id ? 'modal-img selected' : 'modal-img'}">`;
+            return `<img src="${
+                image.src
+            }" title="${image.title}" data-id="${image.dataset.id}" class="${selectedImage.dataset.id === image.datset.id ? 'modal-img selected' : 'modal-img'}">`;
         })
         .join('');
         this.modal.classList.add('open');
