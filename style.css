@@ -241,3 +241,11 @@ Modal
         right: -4rem;
     }
 }
+
+.modal-content {
+  width: 80%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  margin-top: 10rem;
+  position: relative;
+}
